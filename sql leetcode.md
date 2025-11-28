@@ -28,3 +28,12 @@ select name as Customers
 from Customers left join Orders on (Customers.id = Orders.customerId )
 where  Orders.customerId  is null ;
 ```
+5- [Customer placing the largest number of orders](https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/submissions/1842036920/)
+
+```
+select customer_number 
+from Orders 
+group by customer_number 
+order by count(order_number) desc
+limit 1  
+```
